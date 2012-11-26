@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>frege-reactor</artifactId>
+        <groupId>com.talios.frege.osgi</groupId>
+        <version>1.0</version>
+    </parent>
+    <groupId>com.talios.frege.osgi</groupId>
+    <artifactId>fregefeature</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>fregefeature</name>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.karaf.tooling</groupId>
+                <artifactId>features-maven-plugin</artifactId>
+                <version>2.2.7</version>
+
+                <executions>
+                    <execution>
+                        <id>add-features-to-repo</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>add-features-to-repo</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>mvn:smx3/smx3.spi/1.2.6/xml/features</descriptor>
+                            </descriptors>
+                            <!--<features>-->
+                                <!--<feature>spring</feature>-->
+                                <!--<feature>war</feature>-->
+                                <!--<feature>my</feature>-->
+                                <!--<feature>other/1.0-SNAPSHOT</feature>-->
+                            <!--</features>-->
+                            <repository>target/features-repo</repository>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+
+</project>

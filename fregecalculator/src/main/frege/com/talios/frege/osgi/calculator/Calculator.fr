@@ -1,0 +1,13 @@
+module com.talios.frege.osgi.calculator.Calculator where
+
+import com.talios.frege.osgi.billing.Billing
+import com.talios.frege.osgi.billing.CustomerBilling
+
+main _ = println $ "The invoice for " ++ cust.name  ++ " is " ++ show discount ++ " of " ++ show totalBill ++ " with a final amount of " ++ show net
+   where bills     = [Bill 30.0, Bill 30.0, Bill 30.0, Bill 30.0, Bill 30.0, Bill 30.0]
+         cust      = Customer "Mark" "mark@talios.com" bills
+         totalBill = foldl (\a\b -> a + Bill.amount b) 0.0 cust.bills
+         net       = calculateDiscountedAmount cust totalBill
+         discount  = discountFor cust
+
+

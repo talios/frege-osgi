@@ -1,0 +1,20 @@
+module com.talios.frege.osgi.billing.Billing where
+
+-- Billing and Financial stuff.
+
+data Bill = Bill {amount :: Double}
+data Discount = Discount { percentage :: Maybe Double } 
+
+instance Show Discount where
+  show d =  case d.percentage of
+              Nothing = "nothing"
+              Just pc = show pc ++ "%"
+
+class Discountable d where
+    discountFor :: d -> Discount
+    calculateDiscountedAmount :: d -> Double -> Double
+    calculateDiscountedAmount d v = amount where
+        discount = discountFor d
+        amount   = case discount.percentage of
+                    Nothing = v
+                    Just pc = v * (pc / 100.0)

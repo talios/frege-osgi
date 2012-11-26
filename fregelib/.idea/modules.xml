@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../fregebilling/fregebilling.iml" filepath="$PROJECT_DIR$/../fregebilling/fregebilling.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../fregecalculator/fregecalculator.iml" filepath="$PROJECT_DIR$/../fregecalculator/fregecalculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fregelib.iml" filepath="$PROJECT_DIR$/fregelib.iml" />
+    </modules>
+  </component>
+</project>
+

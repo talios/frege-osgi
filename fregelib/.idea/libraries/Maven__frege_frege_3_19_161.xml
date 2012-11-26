@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: frege:frege:3.19.161">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/frege/frege/3.19.161/frege-3.19.161.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/frege/frege/3.19.161/frege-3.19.161-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/frege/frege/3.19.161/frege-3.19.161-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
