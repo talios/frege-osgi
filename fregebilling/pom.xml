@@ -67,7 +67,7 @@
                             com.talios.frege.osgi.billing*;version=${project.version}
                         </Export-Package>
                         <Import-Package>
-                            frege.*; version=${frege.osgi.version},
+                            frege.*; version=${frege.base.version},
                             *
                         </Import-Package>
                     </instructions>

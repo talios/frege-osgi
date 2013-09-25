@@ -12,7 +12,7 @@
         <module>fregelib</module>
         <module>fregebilling</module>
         <module>fregecalculator</module>
-    <module>fregefeature</module>
+    <!-- <module>fregefeature</module> -->
   </modules>
 
 </project>
