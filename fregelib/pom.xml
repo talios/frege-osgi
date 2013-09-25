@@ -11,8 +11,9 @@
     <description>fregelib OSGi bundle project.</description>
 
     <properties>
-        <frege.version>3.19.161</frege.version>
-        <frege.osgi.version>3</frege.osgi.version>
+        <frege.plugin.version>1.0.5</frege.plugin.version>
+        <frege.base.version>3.21.232</frege.base.version>
+        <frege.version>${frege.base.version}-g7b05453</frege.version>        
     </properties>
 
     <dependencies>
@@ -23,9 +24,11 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>frege</groupId>
-            <artifactId>frege</artifactId>
-            <version>${frege.version}</version>
+            <!-- frege compiler is attached as an artifact under my GAV to push to central -->
+            <groupId>com.theoryinpractise.frege</groupId>
+            <artifactId>frege-maven-plugin</artifactId>
+            <classifier>frege-${frege.version}</classifier>
+            <version>${frege.plugin.version}</version>
         </dependency>
     </dependencies>
 
@@ -34,7 +37,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.3.7</version>
+                <version>2.4.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -47,10 +50,10 @@
                             *
                         </Import-Package>
                         <Embed-Dependency>
-                            frege
+                            frege-maven-plugin;inline=true
                         </Embed-Dependency>
                         <_exportcontents>
-                            frege.*; version=${frege.osgi.version}
+                            frege.*; version=${frege.base.version}
                         </_exportcontents>
 
                     </instructions>
