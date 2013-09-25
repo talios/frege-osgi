@@ -12,9 +12,8 @@ instance Show Discount where
 
 class Discountable d where
     discountFor :: d -> Discount
-    calculateDiscountedAmount :: d -> Double -> Double
-    calculateDiscountedAmount d v = amount where
-        discount = discountFor d
-        amount   = case discount.percentage of
-                    Nothing = v
-                    Just pc = v * (pc / 100.0)
+
+calculateDiscountedAmount :: Discountable d => d -> Double -> Double
+calculateDiscountedAmount d v = case d.discountFor.percentage of
+                                  Nothing = v
+                                  Just pc = v * (pc / 100.0)
